@@ -1,14 +1,15 @@
-public class Book {
+public class book {
     private String id;
     private String title;
     private String author;
-    private boolean isBorrowed = false;
+    private boolean isBorrowed;
 
-    public Book (String id, String  title, String author, boolean borrowStatus) {
+    public book(String id, String  title, String author, boolean borrowStatus) {
         this.id = id;
         this.title = title;
         this.author = author;
-        this.isBorrowed = borrowStatus;
+
+        this.isBorrowed = (borrowStatus == true) ? true : false;
     }
 
     public String getId(){
@@ -38,5 +39,4 @@ public class Book {
     public void setBorrowed(boolean isBorrowed){
         this.isBorrowed = isBorrowed;
     }
-
 }
