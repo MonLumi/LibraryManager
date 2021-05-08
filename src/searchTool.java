@@ -42,7 +42,7 @@ public class searchTool {
         }
     }
 
-    public static void showSearchResult() {
+    public static void showResult() {
         int results = searchResults.size();
         if (results == 0) {
             System.out.println("No Book's founded");
@@ -55,5 +55,19 @@ public class searchTool {
                 System.out.println(book.toString());
             }
         }
+    }
+
+    public static void menu(){
+        System.out.println("Choice what do you want to search:");
+        System.out.println("---------------------");
+        System.out.println();
+        System.out.println("1. Search by Book's ID");
+        System.out.println("2. Search by Book's Title");
+        System.out.println("3. Search by Book's Author");
+        System.out.println("4. Search which Books are available");
+        System.out.println("5. Go Back");
+        System.out.println("---------------------");
+        System.out.println();
+        System.out.print("Your choice: ");
     }
 }
