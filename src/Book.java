@@ -1,15 +1,16 @@
-public class book {
+public class Book {
+    // this class for defining what is book
+
     private String id;
     private String title;
     private String author;
     private boolean isBorrowed;
 
-    public book(String id, String  title, String author, boolean borrowStatus) {
+    public Book(String id, String  title, String author, boolean borrowStatus) {
         this.id = id;
         this.title = title;
         this.author = author;
-
-        this.isBorrowed = (borrowStatus == true) ? true : false;
+        this.isBorrowed = borrowStatus;
     }
 
     public String getId(){
@@ -38,5 +39,10 @@ public class book {
     }
     public void setBorrowed(boolean isBorrowed){
         this.isBorrowed = isBorrowed;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%-10s%-20s%-20s%-20s", id, title, author, "Is borrowed: " + isBorrowed);
     }
 }
