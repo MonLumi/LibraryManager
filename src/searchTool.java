@@ -43,18 +43,20 @@ public class searchTool {
     }
 
     public static void showResult() {
-        int results = searchResults.size();
-        if (results == 0) {
-            System.out.println("No Book's founded");
-        } else if (results == 1) {
+        int size = searchResults.size();
+        if (size == 0) {
+            System.out.println("No Book's founded!");
+        } else if (size == 1) {
             System.out.println("Book's founded");
             System.out.println(searchResults.toString());
         } else {
-            System.out.println("There are duplicated Books, sorry for programme's limit: ");
+            System.out.println("We found " + size + " Books: ");
             for (Book book : searchResults) {
                 System.out.println(book.toString());
             }
         }
+        System.out.println("---------------------");
+
     }
 
     public static void menu(){
