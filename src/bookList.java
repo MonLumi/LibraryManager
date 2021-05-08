@@ -14,17 +14,23 @@ public class bookList {
         String author = addTool.author();
         boolean isBorrowed = addTool.isBorrowed();
 
+        System.out.println("--------------------");
         bookLibrary.addBookToLibrary(id, title, author, isBorrowed);
         System.out.println("A new book has been successfully added");
 
         System.out.print("Do you want to add another Book? (\"1\" for Yes): ");
-        if (input.nextInt() == 1) addNewBook();
+        if (input.nextInt() == 1) {
+            System.out.println();
+            addNewBook();
+        }
     }
 
     public static void search() {
+        searchTool.clearOldSearch();
         searchTool.menu();
 
         int choice = input.nextInt();
+        System.out.println();
         if (choice == 5) System.out.println();
         else if (choice == 0 || choice > 5) {
             System.out.println("Your input isn't correct, please try again!");
@@ -40,9 +46,9 @@ public class bookList {
             searchTool.showResult();
 
             System.out.print("Do you want to search another Book? (\"1\" for Yes): ");
-            if (input.nextInt() == 1) search();
-            else {
+            if (input.nextInt() == 1) {
                 System.out.println();
+                search();
             }
         }
     }

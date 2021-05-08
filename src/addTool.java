@@ -18,16 +18,8 @@ public class addTool {
     }
 
     public static boolean isBorrowed(){
-        boolean isBorrowed;
-        System.out.println("Status (Is borrowed or not)");
-        System.out.print("y = yes, n = no): ");
-        char choice = input.nextLine().toLowerCase().charAt(0);
-        while (choice != 'y' && choice != 'n') {
-            System.out.println("Your input is not valid! Please try \"y\" for Yes or \"n\" for No!");
-            choice = input.nextLine().toLowerCase().charAt(0);
-        }
-        isBorrowed = (choice == 'y');
-        return isBorrowed;
+        System.out.print("Is borrowed? (Type \"1\" for Yes): ");
+        int choice = input.nextInt();
+        return (choice == 1);
     }
-
 }

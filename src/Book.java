@@ -43,6 +43,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return String.format("%-10s%-20s%-20s%-20s", id, title, author, "Is borrowed: " + isBorrowed);
+        return String.format("%-10s%-20s%-20s%-20s", id, title, author, isBorrowed ? "Not Available" : "Available");
     }
 }

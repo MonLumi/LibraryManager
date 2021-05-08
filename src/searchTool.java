@@ -6,6 +6,10 @@ public class searchTool {
 
     static List<Book> library = bookLibrary.getLibrary();
     static List <Book> searchResults = new ArrayList<>();
+
+    public static void clearOldSearch(){
+        searchResults.clear();
+    }
     static Scanner input = new Scanner(System.in);
 
     public static void id() {
@@ -46,14 +50,16 @@ public class searchTool {
         int size = searchResults.size();
         if (size == 0) {
             System.out.println("No Book's founded!");
+            return;
         } else if (size == 1) {
             System.out.println("Book's founded");
-            System.out.println(searchResults.toString());
         } else {
             System.out.println("We found " + size + " Books: ");
-            for (Book book : searchResults) {
-                System.out.println(book.toString());
-            }
+
+        }
+        System.out.printf("%-10s%-20s%-20s%-20s%n", "ID", "TITLE", "AUTHOR", "STATUS");
+        for (Book book : searchResults) {
+            System.out.println(book.toString());
         }
         System.out.println("---------------------");
 
@@ -62,14 +68,12 @@ public class searchTool {
     public static void menu(){
         System.out.println("Choice what do you want to search:");
         System.out.println("---------------------");
-        System.out.println();
         System.out.println("1. Search by Book's ID");
         System.out.println("2. Search by Book's Title");
         System.out.println("3. Search by Book's Author");
         System.out.println("4. Search which Books are available");
         System.out.println("5. Go Back");
         System.out.println("---------------------");
-        System.out.println();
         System.out.print("Your choice: ");
     }
 }
