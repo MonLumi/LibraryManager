@@ -7,14 +7,14 @@ public class bookList {
 
     public static void addNewBook() {
         System.out.println("Enter information for the new book:");
-        System.out.println("---------------------");
+        printBlockDivide.print();
 
         String id = addTool.id();
         String title = addTool.title();
         String author = addTool.author();
         boolean isBorrowed = addTool.isBorrowed();
 
-        System.out.println("--------------------");
+        printBlockDivide.print();
         bookLibrary.addBookToLibrary(id, title, author, isBorrowed);
         System.out.println("A new book has been successfully added");
 
@@ -54,7 +54,13 @@ public class bookList {
     }
 
     public static void display() {
-
+        System.out.printf("%-10s%-20s%-20s%-20s%n", "ID", "TITLE", "AUTHOR", "STATUS");
+        for (Book book : bookLibrary.getLibrary()) {
+            System.out.println(book.toString());
+        }
+        printBlockDivide.print();
+        System.out.println("Press Enter to go back");
+        input.next();
     }
 
     public static void borrow() {
