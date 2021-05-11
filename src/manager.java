@@ -11,13 +11,13 @@ public class manager {
 
     public static void welcomeScreen() {
         System.out.println("Welcome to the online book library");
-printBlockDivide.print();
+        printBlockDivide.print();
         System.out.println("1. Enter a new book");
         System.out.println("2. Search a book");
         System.out.println("3. Display books");
         System.out.println("4. Borrow a book by book id");
         System.out.println("5. Exit");
-printBlockDivide.print();
+        printBlockDivide.print();
     }
 
     public static int userChoice(){
@@ -32,13 +32,13 @@ printBlockDivide.print();
             switch (choice) {
                 case 1 -> {
                     bookList.add();
-            printBlockDivide.print();
+                    printBlockDivide.print();
                     System.out.println("Back to Welcome Screen!");
                     System.out.println();
                 }
                 case 2 -> {
                     bookList.search();
-            printBlockDivide.print();
+                    printBlockDivide.print();
                     System.out.println("Back to Welcome Screen!");
                     System.out.println();
                 }
