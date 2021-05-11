@@ -5,7 +5,7 @@ public class bookList {
 
     static Scanner input = new Scanner(System.in);
 
-    public static void addNewBook() {
+    public static void add() {
         System.out.println("Enter information for the new book:");
         printBlockDivide.print();
 
@@ -19,9 +19,10 @@ public class bookList {
         System.out.println("A new book has been successfully added");
 
         System.out.print("Do you want to add another Book? (\"1\" for Yes): ");
-        if (input.nextInt() == 1) {
+        String choice = input.next();
+        if (choice.equals("1")) {
             System.out.println();
-            addNewBook();
+            add();
         }
     }
 

@@ -2,9 +2,10 @@ import java.util.Scanner;
 
 public class addTool {
     static Scanner input = new Scanner(System.in);
+
     public static String id(){
         System.out.print("ID: ");
-        return input.nextLine().toUpperCase();
+        return input.nextLine();
     }
 
     public static String title(){

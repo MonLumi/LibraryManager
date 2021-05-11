@@ -11,13 +11,13 @@ public class manager {
 
     public static void welcomeScreen() {
         System.out.println("Welcome to the online book library");
-        System.out.println("--------------------");
+printBlockDivide.print();
         System.out.println("1. Enter a new book");
         System.out.println("2. Search a book");
         System.out.println("3. Display books");
         System.out.println("4. Borrow a book by book id");
         System.out.println("5. Exit");
-        System.out.println("--------------------");
+printBlockDivide.print();
     }
 
     public static int userChoice(){
@@ -31,14 +31,14 @@ public class manager {
         do {
             switch (choice) {
                 case 1 -> {
-                    bookList.addNewBook();
-                    System.out.println("--------------------");
+                    bookList.add();
+            printBlockDivide.print();
                     System.out.println("Back to Welcome Screen!");
                     System.out.println();
                 }
                 case 2 -> {
                     bookList.search();
-                    System.out.println("--------------------");
+            printBlockDivide.print();
                     System.out.println("Back to Welcome Screen!");
                     System.out.println();
                 }
@@ -46,8 +46,7 @@ public class manager {
                 case 4 -> bookList.borrow();
                 //case 5 for first input, other times will jump to while statement and exit
                 case 5 -> System.out.println("--------------------");
-                default ->
-                    System.out.println("Your input isn't correct, please try again!");
+                default -> System.out.println("Your input isn't correct, please try again!");
             }
             if (choice < 5) {
                 welcomeScreen();
