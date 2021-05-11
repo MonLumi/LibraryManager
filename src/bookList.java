@@ -3,8 +3,6 @@ import java.util.Scanner;
 public class bookList {
     // this class for shown what user need to do
 
-    static Scanner input = new Scanner(System.in);
-
     public static void add() {
         System.out.println("Enter information for the new book:");
         printBlockDivide.print();
@@ -17,24 +15,17 @@ public class bookList {
         printBlockDivide.print();
         bookLibrary.addBookToLibrary(id, title, author, isBorrowed);
         System.out.println("A new book has been successfully added");
-
-        System.out.print("Do you want to add another Book? (\"1\" for Yes): ");
-        String choice = input.next();
-        if (choice.equals("1")) {
-            System.out.println();
-            add();
-        }
     }
 
     public static void search() {
         searchTool.clearOldSearch();
         searchTool.menu();
 
-        int choice = input.nextInt();
+        int choice = manager.input.nextInt();
         System.out.println();
         if (choice == 5) System.out.println();
         else if (choice == 0 || choice > 5) {
-            System.out.println("Your input isn't correct, please try again!");
+            System.out.println("Your manager.input isn't correct, please try again!");
             System.out.println();
             search();
         } else {
@@ -47,7 +38,7 @@ public class bookList {
             searchTool.showResult();
 
             System.out.print("Do you want to search another Book? (\"1\" for Yes): ");
-            if (input.nextInt() == 1) {
+            if (manager.input.nextInt() == 1) {
                 System.out.println();
                 search();
             }
@@ -60,8 +51,9 @@ public class bookList {
             System.out.println(book.toString());
         }
         printBlockDivide.print();
-        System.out.println("Press Enter to go back");
-        input.next();
+        System.out.print("Press Enter to go back");
+        manager.input.nextLine();
+        System.out.println();
     }
 
     public static void borrow() {

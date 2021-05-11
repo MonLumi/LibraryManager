@@ -23,6 +23,7 @@ public class manager {
     public static int userChoice(){
         System.out.print("Your choice: ");
         int choice = input.nextInt();
+        input.nextLine();
         System.out.println();
         return choice;
     }
@@ -32,7 +33,16 @@ public class manager {
             switch (choice) {
                 case 1 -> {
                     bookList.add();
-                    printBlockDivide.print();
+                    String isRepeat;
+
+                    System.out.print("Do you want to add another Book? (\"1\" for Yes): ");
+                    isRepeat = input.nextLine();
+                    System.out.println();
+                    while (isRepeat.equals("1")) {
+                        bookList.add();
+                        System.out.print("Do you want to add another Book? (\"1\" for Yes): ");
+                        isRepeat = input.nextLine();
+                    }
                     System.out.println("Back to Welcome Screen!");
                     System.out.println();
                 }

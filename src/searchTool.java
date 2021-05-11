@@ -10,11 +10,9 @@ public class searchTool {
     public static void clearOldSearch(){
         searchResults.clear();
     }
-    static Scanner input = new Scanner(System.in);
-
     public static void id() {
         System.out.print("Type Book's ID: ");
-        String id = input.nextLine();
+        String id = manager.input.nextLine();
 
         for (Book book : library) {
             if (id.equals(book.getId())) searchResults.add(book);
@@ -24,7 +22,7 @@ public class searchTool {
 
     public static void tilte(){
         System.out.print("Type Book's Title: ");
-        String title = input.nextLine();
+        String title = manager.input.nextLine();
 
         for (Book book : library) {
             if (title.equals(book.getTitle())) searchResults.add(book);
@@ -33,7 +31,7 @@ public class searchTool {
 
     public static void author(){
         System.out.print("Type Book's Author: ");
-        String author = input.nextLine();
+        String author = manager.input.nextLine();
 
         for (Book book : library){
             if (author.equals(book.getAuthor())) searchResults.add(book);
