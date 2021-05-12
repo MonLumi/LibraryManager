@@ -3,14 +3,14 @@ public class bookList {
 
     public static void add() {
         System.out.println("Enter information for the new book:");
-        printBlockDivide.print();
+        manager.lineBreak();
 
         String id = addTool.id();
         String title = addTool.title();
         String author = addTool.author();
         boolean isBorrowed = addTool.isBorrowed();
 
-        printBlockDivide.print();
+        manager.lineBreak();
         bookLibrary.addBookToLibrary(id, title, author, isBorrowed);
         System.out.println("A new book has been successfully added");
     }
@@ -34,7 +34,7 @@ public class bookList {
                 case 4 -> searchTool.notBorrow();
             }
             searchTool.showResult();
-            printBlockDivide.print();
+            manager.lineBreak();
         }
     }
 
@@ -43,7 +43,7 @@ public class bookList {
         for (Book book : bookLibrary.getLibrary()) {
             System.out.println(book.toString());
         }
-        printBlockDivide.print();
+        manager.lineBreak();
         System.out.print("Press Enter to go back");
         manager.input.nextLine();
         System.out.println();
@@ -64,6 +64,5 @@ public class bookList {
         if (borrowTool.availableBook.size()>0) {
             borrowTool.borrowAction(borrowTool.choseWhatBorrow());
         }
-        borrowTool.displayBorrowedBook();
     }
 }

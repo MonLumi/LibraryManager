@@ -16,7 +16,6 @@ public class searchTool {
         for (Book book : library) {
             if (id.equals(book.getId())) searchResults.add(book);
         }
-        if (searchResults.size() > 1) System.out.println("Sorry for programme's limit, there are duplicate Book's ID!");
     }
 
     public static void tilte(){
@@ -45,7 +44,7 @@ public class searchTool {
 
     public static void showResult() {
         int size = searchResults.size();
-        printBlockDivide.print();
+        manager.lineBreak();
         if (size == 0) {
             System.out.println("No Book's founded!");
         } else{
@@ -65,12 +64,12 @@ public class searchTool {
 
     public static void menu(){
         System.out.println("Choice what do you want to search:");
-        printBlockDivide.print();
+        manager.lineBreak();
         System.out.println("1. Search by Book's ID");
         System.out.println("2. Search by Book's Title");
         System.out.println("3. Search by Book's Author");
         System.out.println("4. Search which Books are available");
-        printBlockDivide.print();
+        manager.lineBreak();
         System.out.print("Your choice: ");
     }
 }

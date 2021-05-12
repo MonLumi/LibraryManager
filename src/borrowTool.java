@@ -10,12 +10,12 @@ public class borrowTool {
     
     static void menu(){
         System.out.println("Choice what do you want to borrow:");
-        printBlockDivide.print();
+        manager.lineBreak();
         System.out.println("1. Borrow by Book's ID");
         System.out.println("2. Borrow by Book's Title");
         System.out.println("3. Borrow by Book's Author");
         System.out.println("4. Borrow which Books are available");
-        printBlockDivide.print();
+        manager.lineBreak();
         System.out.print("Your choice: ");
     }
 
@@ -33,14 +33,16 @@ public class borrowTool {
             System.out.printf("%-10s%-20s%n","0", "For all Books");
             System.out.printf("%-10s%-20s%n", availableBook.size()+1, "For none");
         }
-        printBlockDivide.print();
+        manager.lineBreak();
     }
 
     static void borrowAction(int choice){
         if (choice == 0) {
             borrowedBook.addAll(availableBook);
+            displayBorrowedBook();
         } else if (choice < size + 1){
             borrowedBook.add(availableBook.get(choice-1));
+            displayBorrowedBook();
         }
 
         for (Book borrowedBook : borrowedBook){
@@ -53,7 +55,7 @@ public class borrowTool {
     static void displayBorrowedBook(){
         System.out.println();
         System.out.println("You have successful borrowed " + borrowedBook.size() + " books");
-        printBlockDivide.print();
+        manager.lineBreak();
         System.out.printf("%-10s%-10s%-20s%-20s%n","NO.", "ID", "TITLE", "AUTHOR");
         for (int i = 0; i < borrowedBook.size(); i++) {
             System.out.printf("%-10s", i+1);

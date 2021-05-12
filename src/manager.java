@@ -11,13 +11,13 @@ public class manager {
 
     public static void welcomeScreen() {
         System.out.println("Welcome to the online book library");
-        printBlockDivide.print();
+        lineBreak();
         System.out.println("1. Enter a new book");
         System.out.println("2. Search a book");
         System.out.println("3. Display books");
         System.out.println("4. Borrow a book");
         System.out.println("5. Exit");
-        printBlockDivide.print();
+        lineBreak();
     }
 
     public static int userChoice(){
@@ -84,5 +84,9 @@ public class manager {
     public static void exit(){
         System.out.println("Thank! See you later.");
 
+    }
+    
+    public static void lineBreak(){
+        System.out.println("--------------------");
     }
 }
