@@ -22,8 +22,7 @@ public class bookList {
         int choice = manager.input.nextInt();
         manager.input.nextLine();
         System.out.println();
-        if (choice == 5) System.out.println();
-        else if (choice == 0 || choice > 5) {
+        if (choice == 0 || choice >= 5) {
             System.out.println("Your manager.input isn't correct, please try again!");
             System.out.println();
             search();
@@ -35,6 +34,7 @@ public class bookList {
                 case 4 -> searchTool.notBorrow();
             }
             searchTool.showResult();
+            printBlockDivide.print();
         }
     }
 
@@ -50,6 +50,20 @@ public class bookList {
     }
 
     public static void borrow() {
+        searchTool.clearOldSearch();
+        borrowTool.menu();
+        int choice = Integer.parseInt(manager.input.nextLine());
+        switch (choice) {
+            case 1 -> searchTool.id();
+            case 2 -> searchTool.tilte();
+            case 3 -> searchTool.author();
+            case 4 -> searchTool.notBorrow();
+        }
 
+        borrowTool.displayAvailableBook();
+        if (borrowTool.availableBook.size()>0) {
+            borrowTool.borrowAction(borrowTool.choseWhatBorrow());
+        }
+        borrowTool.displayBorrowedBook();
     }
 }

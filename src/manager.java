@@ -15,7 +15,7 @@ public class manager {
         System.out.println("1. Enter a new book");
         System.out.println("2. Search a book");
         System.out.println("3. Display books");
-        System.out.println("4. Borrow a book by book id");
+        System.out.println("4. Borrow a book");
         System.out.println("5. Exit");
         printBlockDivide.print();
     }
@@ -32,36 +32,43 @@ public class manager {
         do {
             switch (choice) {
                 case 1 -> {
-                    bookList.add();
                     String isRepeat;
-
-                    System.out.print("Do you want to add another Book? (\"1\" for Yes): ");
-                    isRepeat = input.nextLine();
-                    System.out.println();
-                    while (isRepeat.equals("1")) {
+                    do {
                         bookList.add();
                         System.out.print("Do you want to add another Book? (\"1\" for Yes): ");
                         isRepeat = input.nextLine();
-                    }
+                        System.out.println();
+                    } while (isRepeat.equals("1"));
+
+
                     System.out.println("Back to Welcome Screen!");
                     System.out.println();
                 }
                 case 2 -> {
-                    bookList.search();
-
-                    System.out.print("Do you want to search another Book? (\"1\" for Yes): ");
-                    String isRepeat = input.nextLine();
-                    while (isRepeat.equals("1")) {
-                        System.out.println();
+                    String isRepeat;
+                    do {
                         bookList.search();
                         System.out.print("Do you want to search another Book? (\"1\" for Yes): ");
                         isRepeat = input.nextLine();
-                    }
+                        System.out.println();
+                    } while (isRepeat.equals("1"));
+
                     System.out.println("Back to Welcome Screen!");
                     System.out.println();
                 }
                 case 3 -> bookList.display();
-                case 4 -> bookList.borrow();
+                case 4 -> {
+                    String isRepeat;
+                    do {
+                        bookList.borrow();
+                        System.out.print("Do you want to borrow another Book? (\"1\" for Yes): ");
+                        isRepeat = input.nextLine();
+                        System.out.println();
+                    } while (isRepeat.equals("1"));
+
+                    System.out.println("Back to Welcome Screen!");
+                    System.out.println();
+                }
                 //case 5 for first input, other times will jump to while statement and exit
                 case 5 -> System.out.println("--------------------");
                 default -> System.out.println("Your input isn't correct, please try again!");

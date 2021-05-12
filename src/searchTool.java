@@ -48,19 +48,19 @@ public class searchTool {
         printBlockDivide.print();
         if (size == 0) {
             System.out.println("No Book's founded!");
-            return;
-        } else if (size == 1) {
-            System.out.println("Book's founded");
-        } else {
-            System.out.println("We found " + size + " Books: ");
+        } else{
+            if (size == 1) {
+                System.out.println("Book's founded");
+            } else {
+                System.out.println("We found " + size + " Books: ");
 
+            }
+            System.out.printf("%-10s%-10s%-20s%-20s%-20s%n","NO.", "ID", "TITLE", "AUTHOR", "STATUS");
+            for (int i = 0; i < searchResults.size(); i++) {
+                System.out.printf("%-10s", i+1);
+                System.out.println(searchResults.get(i).toString());
+            }
         }
-        System.out.printf("%-10s%-20s%-20s%-20s%n", "ID", "TITLE", "AUTHOR", "STATUS");
-        for (Book book : searchResults) {
-            System.out.println(book.toString());
-        }
-        printBlockDivide.print();
-
     }
 
     public static void menu(){
@@ -70,7 +70,6 @@ public class searchTool {
         System.out.println("2. Search by Book's Title");
         System.out.println("3. Search by Book's Author");
         System.out.println("4. Search which Books are available");
-        System.out.println("5. Go Back");
         printBlockDivide.print();
         System.out.print("Your choice: ");
     }
