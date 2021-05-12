@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class searchTool {
 
@@ -46,6 +45,7 @@ public class searchTool {
 
     public static void showResult() {
         int size = searchResults.size();
+        printBlockDivide.print();
         if (size == 0) {
             System.out.println("No Book's founded!");
             return;
@@ -59,19 +59,19 @@ public class searchTool {
         for (Book book : searchResults) {
             System.out.println(book.toString());
         }
-        System.out.println("---------------------");
+        printBlockDivide.print();
 
     }
 
     public static void menu(){
         System.out.println("Choice what do you want to search:");
-        System.out.println("---------------------");
+        printBlockDivide.print();
         System.out.println("1. Search by Book's ID");
         System.out.println("2. Search by Book's Title");
         System.out.println("3. Search by Book's Author");
         System.out.println("4. Search which Books are available");
         System.out.println("5. Go Back");
-        System.out.println("---------------------");
+        printBlockDivide.print();
         System.out.print("Your choice: ");
     }
 }

@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class addTool {
 
     public static String id(){

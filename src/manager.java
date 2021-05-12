@@ -48,7 +48,15 @@ public class manager {
                 }
                 case 2 -> {
                     bookList.search();
-                    printBlockDivide.print();
+
+                    System.out.print("Do you want to search another Book? (\"1\" for Yes): ");
+                    String isRepeat = input.nextLine();
+                    while (isRepeat.equals("1")) {
+                        System.out.println();
+                        bookList.search();
+                        System.out.print("Do you want to search another Book? (\"1\" for Yes): ");
+                        isRepeat = input.nextLine();
+                    }
                     System.out.println("Back to Welcome Screen!");
                     System.out.println();
                 }

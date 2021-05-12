@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class bookList {
     // this class for shown what user need to do
 
@@ -22,6 +20,7 @@ public class bookList {
         searchTool.menu();
 
         int choice = manager.input.nextInt();
+        manager.input.nextLine();
         System.out.println();
         if (choice == 5) System.out.println();
         else if (choice == 0 || choice > 5) {
@@ -36,12 +35,6 @@ public class bookList {
                 case 4 -> searchTool.notBorrow();
             }
             searchTool.showResult();
-
-            System.out.print("Do you want to search another Book? (\"1\" for Yes): ");
-            if (manager.input.nextInt() == 1) {
-                System.out.println();
-                search();
-            }
         }
     }
 
